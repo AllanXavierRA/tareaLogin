@@ -6,6 +6,7 @@ import handlebars from 'express-handlebars';
 import viewsRouter from './routes/views.router.js';
 import productRoute from './routes/products.js';
 import cartRoute from './routes/carts.js';
+import authRouter from './routes/auth.js';
 import { Server } from 'socket.io';
 import mongoose from 'mongoose';
 
@@ -34,6 +35,7 @@ app.use(express.static(__dirname+'/public'));
 app.use('/', viewsRouter)
 app.use('/api/products', productRoute);
 app.use('/api/cart', cartRoute);
+app.use('/auth', authRouter)
 
 
 

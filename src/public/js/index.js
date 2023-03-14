@@ -4,8 +4,8 @@ const socket = io();
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const res = await fetch("http://localhost:8080/api/products")
-        const data = await res.json()
-        
+        const products = await res.json()
+        const data = products.payload;
         const tabla =  document.getElementById('tabla');
     
         data.forEach(element => {
